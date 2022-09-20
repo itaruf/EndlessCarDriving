@@ -68,13 +68,13 @@ bool HelloWorld::init()
 
     ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
 
-    Interactible* interactible = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 1);
+    Interactible* interactible = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
     interactible->setTag(1);
     this->addChild(interactible->sprite, 0);
     objects.emplace_back(interactible);
 
     ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Interactible* interactible2 = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 1);
+    Interactible* interactible2 = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
     interactible2->setTag(1);
     this->addChild(interactible2->sprite, 0);
     objects.emplace_back(interactible2);
