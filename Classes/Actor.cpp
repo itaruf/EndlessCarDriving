@@ -1,12 +1,17 @@
 #include "Actor.h"
 
-Actor::Actor(cocos2d::Sprite* sprite, cocos2d::Vec2 position) : sprite(sprite), position(position)
+Actor::Actor(Sprite* sprite, Vec2 position, Controller* controller) : sprite(sprite), position(position), controller(controller)
 {
 	if (!sprite)
 		return;
 
 	/*this->Node::create();*/
 	sprite->setPosition(position);
+}
+
+void Actor::update(float delta)
+{
+	
 }
 
 Actor::~Actor()

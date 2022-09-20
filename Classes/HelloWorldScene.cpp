@@ -121,7 +121,17 @@ void HelloWorld::update(float delta)
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    for (const auto& object : objects)
+    for (const auto& object : objects) 
+    {
+        auto actor = dynamic_cast<Actor*>(object);
+        if (!actor)
+            continue;
+       
+        actor->update(delta);
+
+    }
+
+   /* for (const auto& object : objects)
     {
         object->setPosition(object->getPosition() + Vec2(0, 10));
         auto moveTo = MoveTo::create(2, Vec2(0, 20));
@@ -137,13 +147,12 @@ void HelloWorld::update(float delta)
         if (!sprite)
             continue;
 
-
-        /*auto position = sprite->getPosition();
+        auto position = sprite->getPosition();
         position.x -= 250 * delta;
         if (position.x < 0 - (actor->getBoundingBox().size.width / 2))
             position.x = this->getBoundingBox().getMaxX() + sprite->getBoundingBox().size.width / 2;
-        sprite->setPosition(position);*/
-    }
+        sprite->setPosition(position);
+    }*/
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
