@@ -14,6 +14,7 @@ public:
 	Controller* controller = nullptr;
 
 	void update(float) override;
+	bool init() override;
 
 	Actor(Sprite* sprite = nullptr, Vec2 position = Vec2(0,0), Controller* controller = nullptr);
 	~Actor();

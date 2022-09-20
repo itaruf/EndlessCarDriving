@@ -23,7 +23,7 @@
  ****************************************************************************/
 
 #include "HelloWorldScene.h"
-#include "Actor.h"
+#include "Player.h"
 
 USING_NS_CC;
 
@@ -52,25 +52,11 @@ bool HelloWorld::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    auto listener = EventListenerCustom::create("game_start_event", [=](EventCustom* event) {
-        std::string str("Custom event 1 received, ");
-
-        const std::string& tmp = "JE BOUGE";
-        auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
-        label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-            origin.y + visibleSize.height - label->getContentSize().height));
-        this->addChild(label, 1);
-
-        });
-
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-
     // 1. super init first
     if (!Scene::init() || !Scene::initWithPhysics())
     {
         return false;
     }
-
 
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
@@ -99,10 +85,10 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    Actor* actor = new Actor(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-    actor->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
-    this->addChild(actor->sprite, 0);
-    objects.emplace_back(actor);
+    Player* player = new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    player->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
+    this->addChild(player->sprite, 0);
+    objects.emplace_back(player);
 
     /*auto objects{ this->getChildren() };*/
     const std::string& tmp = std::to_string(objects.size());
@@ -123,33 +109,32 @@ void HelloWorld::update(float delta)
 
     for (const auto& object : objects) 
     {
-        auto actor = dynamic_cast<Actor*>(object);
-        if (!actor)
+        auto player = dynamic_cast<Player*>(object);
+        if (!player)
             continue;
        
-        actor->update(delta);
-
+        player->update(delta);
     }
 
    /* for (const auto& object : objects)
     {
         object->setPosition(object->getPosition() + Vec2(0, 10));
         auto moveTo = MoveTo::create(2, Vec2(0, 20));
-        auto actor = dynamic_cast<Actor*>(object);
+        auto player = dynamic_cast<Player*>(object);
 
         GameEvents::current().CallEvent(GameEvents::current().gameStartEvent);
 
-        if (!actor)
+        if (!player)
             continue;
 
-        auto sprite = actor->sprite;
+        auto sprite = player->sprite;
 
         if (!sprite)
             continue;
 
         auto position = sprite->getPosition();
         position.x -= 250 * delta;
-        if (position.x < 0 - (actor->getBoundingBox().size.width / 2))
+        if (position.x < 0 - (player->getBoundingBox().size.width / 2))
             position.x = this->getBoundingBox().getMaxX() + sprite->getBoundingBox().size.width / 2;
         sprite->setPosition(position);
     }*/

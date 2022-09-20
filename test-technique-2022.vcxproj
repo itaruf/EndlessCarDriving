@@ -245,7 +245,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/testtechnique-cocosproject/testtechnique-cocosproject/test-technique-2022/Debug/test-technique-2022.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/testtechnique-cocosproject/testtechnique-cocosproject/test-technique-2022/bin/test-technique-2022/Debug/test-technique-2022.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
