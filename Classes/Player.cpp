@@ -15,62 +15,71 @@ bool Player::init()
 
     listener->onKeyPressed = CC_CALLBACK_2(Player::onKeyPressed, this);
     listener->onKeyReleased = CC_CALLBACK_2(Player::onKeyReleased, this);
-    _eventDispatcher->addEventListenerWithFixedPriority(listener, 1);
+    /*_eventDispatcher->addEventListenerWithFixedPriority(listener, 1);*/
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
     return true;
 }
 
 void Player::update(float delta)
 {
-
     MoveHorizontally(direction.x);
     MoveVertically(direction.y);
-
-    /*log("hey");*/
 }
 
 
 void Player::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
 {
+    auto playerX{ sprite->getPosition().x };
+    auto playerY{ sprite->getPosition().y };
+
     switch (keyCode)
     {
         // MOVE UP
     case EventKeyboard::KeyCode::KEY_W:
-    case EventKeyboard::KeyCode::KEY_Z:
-        direction = Vec2(direction.x, 1);
+    /*case EventKeyboard::KeyCode::KEY_Z:*/
+        direction.y = 1;
+        playerY += movespeed;
         break;
 
         // MOVE DOWN
     case EventKeyboard::KeyCode::KEY_S:
-        direction = Vec2(direction.x, -1);
+        direction.y = -1;
+        playerY -= movespeed;
         break;
 
         // MOVE LEFT
     case EventKeyboard::KeyCode::KEY_A:
-    case EventKeyboard::KeyCode::KEY_Q:
-        direction = Vec2(-1, direction.y);
+    /*case EventKeyboard::KeyCode::KEY_Q:*/
+        direction.x = -1;
+        playerX += movespeed;
         break;
 
         // MOVE RIGHT
     case EventKeyboard::KeyCode::KEY_D:
-        direction = Vec2(1, direction.y);
-        break;        
+        direction.x = 1;
+        playerX -= movespeed;
+        break;
 
     default:
         break;
     }
 
-    cocos2d::log("PRESSED");
+    /*sprite->setPosition(playerX , playerY);*/
+
+    /*cocos2d::log("PRESSED");*/
 }
 
 void Player::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 {
-    /*isKeyPressed = false;*/
+    /*return;*/
+
+    ///*isKeyPressed = false;*/
     switch (keyCode)
     {
         // MOVE UP
     case EventKeyboard::KeyCode::KEY_W:
-    case EventKeyboard::KeyCode::KEY_Z:
+    /*case EventKeyboard::KeyCode::KEY_Z:*/
         direction = Vec2(direction.x, 0);
         break;
 
@@ -81,7 +90,7 @@ void Player::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 
         // MOVE LEFT
     case EventKeyboard::KeyCode::KEY_A:
-    case EventKeyboard::KeyCode::KEY_Q:
+    /*case EventKeyboard::KeyCode::KEY_Q:*/
         direction = Vec2(0, direction.y);
         break;
 
@@ -94,12 +103,12 @@ void Player::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
         break;
     }
 
-    cocos2d::log("Released");
+    //cocos2d::log("Released");
 }
 
 void Player::MoveHorizontally(float value)
 {
-    cocos2d::log("%.2f", value);
+    /*cocos2d::log("%.2f", value);*/
 
     float position = sprite->getPosition().x + (value * movespeed);
 
@@ -108,7 +117,7 @@ void Player::MoveHorizontally(float value)
 
 void Player::MoveVertically(float value)
 {
-    cocos2d::log("%.2f", value);
+    /*cocos2d::log("%.2f", value);*/
 
     float position = sprite->getPosition().y + (value * movespeed);
 

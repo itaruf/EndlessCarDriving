@@ -27,11 +27,12 @@
 
 #include "cocos2d.h"
 #include "GameEvents.h"
+#include "Actor.h"
 
 class HelloWorld : public cocos2d::Scene
 {
 public:
-    std::vector<Node*> objects;
+    std::vector<Actor*> objects;
 
     static cocos2d::Scene* createScene();
 

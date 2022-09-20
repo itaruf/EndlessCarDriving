@@ -810,6 +810,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\Actor.cpp" />
+    <ClCompile Include="Classes\Controller.cpp" />
+    <ClCompile Include="Classes\Interactible.cpp" />
     <ClCompile Include="Classes\Player.cpp" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\AppDelegate.h" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\HelloWorldScene.h" />
@@ -819,8 +821,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\main.cpp" />
     <ClInclude Include="Classes\Actor.h" />
+    <ClInclude Include="Classes\Controller.h" />
     <ClInclude Include="Classes\GameEvents.h" />
+    <ClInclude Include="Classes\Interactible.h" />
     <ClInclude Include="Classes\Player.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Interactible.h" />
     <ResourceCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\game.rc" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\CloseNormal.png" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\CloseSelected.png" />

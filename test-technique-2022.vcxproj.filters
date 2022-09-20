@@ -19,6 +19,12 @@
     <ClCompile Include="Classes\Player.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Classes\Controller.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Interactible.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\AppDelegate.h">
@@ -58,6 +64,14 @@
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="Classes\GameEvents.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Interactible.h" />
+    <ClInclude Include="Classes\Interactible.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Classes\Controller.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

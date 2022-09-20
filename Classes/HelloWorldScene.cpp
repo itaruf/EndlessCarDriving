@@ -86,11 +86,25 @@ bool HelloWorld::init()
     this->addChild(menu, 1);
 
     Player* player = new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10);
-    player->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
+    //player->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
+    player->setTag(0);
+    player->sprite->getPhysicsBody()->setCategoryBitmask(0x01);
+    player->sprite->getPhysicsBody()->setCollisionBitmask(0x02);
+    player->sprite->getPhysicsBody()->setContactTestBitmask(0x01);
+
     this->addChild(player->sprite, 0);
     objects.emplace_back(player);
 
-    /*auto objects{ this->getChildren() };*/
+    Actor* actor = new Actor(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10);
+    //actor->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
+    actor->setTag(1);
+    actor->sprite->getPhysicsBody()->setCategoryBitmask(0x02);
+    actor->sprite->getPhysicsBody()->setCollisionBitmask(0x01);
+    actor->sprite->getPhysicsBody()->setContactTestBitmask(0x01);
+
+    this->addChild(actor->sprite, 0);
+    objects.emplace_back(actor);
+
     const std::string& tmp = std::to_string(objects.size());
     auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
     label->setPosition(Vec2(origin.x + visibleSize.width / 2,
@@ -110,10 +124,17 @@ void HelloWorld::update(float delta)
     for (const auto& object : objects) 
     {
         auto player = dynamic_cast<Player*>(object);
-        if (!player)
-            continue;
+        if (player)
+        {
+            player->update(delta);
+        }
+
+        auto actor = dynamic_cast<Actor*>(object);
+        if (actor)
+        {
+            actor->isColliding(objects);
+        }
        
-        player->update(delta);
     }
 
    /* for (const auto& object : objects)
