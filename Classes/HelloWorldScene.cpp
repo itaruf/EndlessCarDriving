@@ -55,7 +55,7 @@ bool HelloWorld::init()
     auto listener = EventListenerCustom::create("game_start_event", [=](EventCustom* event) {
         std::string str("Custom event 1 received, ");
 
-        const std::string& tmp = "TRIGGERED";
+        const std::string& tmp = "JE BOUGE";
         auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
         label->setPosition(Vec2(origin.x + visibleSize.width / 2,
             origin.y + visibleSize.height - label->getContentSize().height));
@@ -127,8 +127,7 @@ void HelloWorld::update(float delta)
         auto moveTo = MoveTo::create(2, Vec2(0, 20));
         auto actor = dynamic_cast<Actor*>(object);
 
-        EventCustom gameStartEvent("game_start_event");
-        _eventDispatcher->dispatchEvent(&gameStartEvent);
+        GameEvents::current().CallEvent(GameEvents::current().gameStartEvent);
 
         if (!actor)
             continue;
@@ -139,11 +138,11 @@ void HelloWorld::update(float delta)
             continue;
 
 
-        auto position = sprite->getPosition();
+        /*auto position = sprite->getPosition();
         position.x -= 250 * delta;
         if (position.x < 0 - (actor->getBoundingBox().size.width / 2))
             position.x = this->getBoundingBox().getMaxX() + sprite->getBoundingBox().size.width / 2;
-        sprite->setPosition(position);
+        sprite->setPosition(position);*/
     }
 }
 
@@ -151,9 +150,4 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application
     Director::getInstance()->end();
-
-    /*To navigate back to native iOS screen(if present) without quitting the application  ,do not use Director::getInstance()->end() as given above,instead trigger a custom event created in RootViewController.mm as below*/
-
-    //EventCustom customEndEvent("game_scene_close_event");
-    //_eventDispatcher->dispatchEvent(&customEndEvent);
 }
