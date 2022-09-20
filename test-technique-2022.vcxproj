@@ -810,7 +810,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\Actor.cpp" />
+    <ClCompile Include="Classes\Collectible.cpp" />
     <ClCompile Include="Classes\CustomController.cpp" />
+    <ClCompile Include="Classes\GameMode.cpp" />
     <ClCompile Include="Classes\Interactible.cpp" />
     <ClCompile Include="Classes\ObjectController.cpp" />
     <ClCompile Include="Classes\Player.cpp" />
@@ -823,8 +825,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\main.cpp" />
     <ClInclude Include="Classes\Actor.h" />
+    <ClInclude Include="Classes\Collectible.h" />
     <ClInclude Include="Classes\CustomController.h" />
     <ClInclude Include="Classes\GameEvents.h" />
+    <ClInclude Include="Classes\GameMode.h" />
     <ClInclude Include="Classes\Interactible.h" />
     <ClInclude Include="Classes\ObjectController.h" />
     <ClInclude Include="Classes\Player.h" />
@@ -919,6 +923,36 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Image Include="Resources\Assets\flat.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_0.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_1.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_10.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_11.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_12.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_13.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_14.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_15.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_16.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_17.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_18.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_19.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_2.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_20.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_21.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_22.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_23.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_24.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_25.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_26.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_27.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_28.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_29.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_3.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_4.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_5.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_6.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_7.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_8.png" />
+    <Image Include="Resources\Assets\Icons\pixel_style2_9.png" />
     <Image Include="Resources\Assets\pixel_style2.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>

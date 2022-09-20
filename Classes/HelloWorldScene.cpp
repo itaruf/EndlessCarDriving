@@ -51,7 +51,6 @@ bool HelloWorld::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    // 1. super init first
     if (!Scene::init() || !Scene::initWithPhysics())
         return false;
 
@@ -66,8 +65,9 @@ bool HelloWorld::init()
     this->addChild(player->sprite, 0);
     objects.emplace_back(player);
 
-    ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
+    /*Props*/
 
+    ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
     Interactible* interactible = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
     interactible->setTag(1);
     this->addChild(interactible->sprite, 0);
@@ -78,6 +78,14 @@ bool HelloWorld::init()
     interactible2->setTag(1);
     this->addChild(interactible2->sprite, 0);
     objects.emplace_back(interactible2);
+
+    ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
+    Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 400), controller3, 10);
+    collectible->setTag(1);
+    this->addChild(collectible->sprite, 0);
+    objects.emplace_back(collectible);
+
+    GameMode::current().player = player;
 
     this->scheduleUpdate();
 
@@ -91,16 +99,10 @@ void HelloWorld::update(float delta)
 
     for (const auto& object : objects) 
     {
-        auto player = dynamic_cast<Player*>(object);
-        if (player)
+        auto actor = dynamic_cast<Actor*>(object);
+        if (actor)
         {
-            player->update(delta);
-        }
-
-        auto interactible = dynamic_cast<Interactible*>(object);
-        if (interactible)
-        {
-            interactible->update(delta);
+            actor->update(delta);
         }
     }
 }

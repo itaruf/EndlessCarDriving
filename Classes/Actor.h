@@ -1,6 +1,7 @@
 #pragma once
 
 #include "cocos2d.h"
+#include "GameEvents.h"
 
 class CustomController;
 #include "CustomController.h"
@@ -30,7 +31,7 @@ public:
 
 	void isColliding(std::vector<Actor*>& objects);
 
-	bool onContactBegin(PhysicsContact& contact);
+	virtual bool onContactBegin(PhysicsContact& contact);
 	/*void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);*/
 
 };

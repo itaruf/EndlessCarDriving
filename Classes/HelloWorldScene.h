@@ -26,12 +26,13 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include "GameEvents.h"
-#include "Actor.h"
+//#include "GameEvents.h"
+//#include "Actor.h"
 #include "SpawnPoint.h" 
 #include "Player.h"
 #include "ObjectController.h"
-#include "Interactible.h"
+#include "Collectible.h"
+//#include "GameMode.h"
 
 class HelloWorld : public cocos2d::Scene
 {

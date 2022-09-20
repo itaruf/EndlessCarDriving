@@ -31,6 +31,12 @@
     <ClCompile Include="Classes\SpawnPoint.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Classes\Collectible.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\GameMode.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\AppDelegate.h">
@@ -84,6 +90,12 @@
     <ClInclude Include="Classes\SpawnPoint.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Classes\Collectible.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\GameMode.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\CMakeLists.txt" />
@@ -114,6 +126,9 @@
     </Filter>
     <Filter Include="Resources\Assets">
       <UniqueIdentifier>{7c3715bf-0831-46b7-a241-01b95b80bff3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Icons">
+      <UniqueIdentifier>{d30bbe23-761c-410f-91f6-62e81ded5209}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +173,96 @@
     </Image>
     <Image Include="Resources\Assets\SportsRacingCar_0.png">
       <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_0.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_1.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_2.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_3.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_4.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_5.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_6.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_7.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_8.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_9.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_10.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_11.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_12.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_13.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_14.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_15.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_16.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_17.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_18.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_19.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_20.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_21.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_22.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_23.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_24.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_25.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_26.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_27.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_28.png">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="Resources\Assets\Icons\pixel_style2_29.png">
+      <Filter>Resources\Icons</Filter>
     </Image>
   </ItemGroup>
 </Project>
