@@ -23,7 +23,6 @@
  ****************************************************************************/
 
 #include "HelloWorldScene.h"
-#include "Player.h"
 
 USING_NS_CC;
 
@@ -54,62 +53,31 @@ bool HelloWorld::init()
 
     // 1. super init first
     if (!Scene::init() || !Scene::initWithPhysics())
-    {
         return false;
-    }
 
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    // you may modify it. add a "close" icon to exit the progress. it's an autorelease object
-
-    auto closeItem = MenuItemImage::create(
-        "CloseNormal.png",
-        "CloseSelected.png",
-        CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
-
-    if (closeItem == nullptr ||
-        closeItem->getContentSize().width <= 0 ||
-        closeItem->getContentSize().height <= 0)
-    {
-        problemLoading("'CloseNormal.png' and 'CloseSelected.png'");
-    }
-    else
-    {
-        float x = origin.x + visibleSize.width - closeItem->getContentSize().width / 2;
-        float y = origin.y + closeItem->getContentSize().height / 2;
-        closeItem->setPosition(Vec2(x, y));
-    }
-
-    // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
-    menu->setPosition(Vec2::ZERO);
-    this->addChild(menu, 1);
+    /*Adding player to the scene*/
 
     Player* player = new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10);
-    //player->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
     player->setTag(0);
     player->sprite->getPhysicsBody()->setCategoryBitmask(0x01);
     player->sprite->getPhysicsBody()->setCollisionBitmask(0x02);
-    player->sprite->getPhysicsBody()->setContactTestBitmask(0x01);
+    player->sprite->getPhysicsBody()->setContactTestBitmask(0x02);
 
     this->addChild(player->sprite, 0);
     objects.emplace_back(player);
 
-    Actor* actor = new Actor(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10);
-    //actor->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
-    actor->setTag(1);
-    actor->sprite->getPhysicsBody()->setCategoryBitmask(0x02);
-    actor->sprite->getPhysicsBody()->setCollisionBitmask(0x01);
-    actor->sprite->getPhysicsBody()->setContactTestBitmask(0x01);
+    ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
 
-    this->addChild(actor->sprite, 0);
-    objects.emplace_back(actor);
+    Interactible* interactible = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 1);
+    interactible->setTag(1);
+    this->addChild(interactible->sprite, 0);
+    objects.emplace_back(interactible);
 
-    const std::string& tmp = std::to_string(objects.size());
-    auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
-    label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-        origin.y + visibleSize.height - label->getContentSize().height));
-    this->addChild(label, 1);
+    ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
+    Interactible* interactible2 = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 1);
+    interactible2->setTag(1);
+    this->addChild(interactible2->sprite, 0);
+    objects.emplace_back(interactible2);
 
     this->scheduleUpdate();
 
@@ -129,36 +97,12 @@ void HelloWorld::update(float delta)
             player->update(delta);
         }
 
-        auto actor = dynamic_cast<Actor*>(object);
-        if (actor)
+        auto interactible = dynamic_cast<Interactible*>(object);
+        if (interactible)
         {
-            actor->isColliding(objects);
+            interactible->update(delta);
         }
-       
     }
-
-   /* for (const auto& object : objects)
-    {
-        object->setPosition(object->getPosition() + Vec2(0, 10));
-        auto moveTo = MoveTo::create(2, Vec2(0, 20));
-        auto player = dynamic_cast<Player*>(object);
-
-        GameEvents::current().CallEvent(GameEvents::current().gameStartEvent);
-
-        if (!player)
-            continue;
-
-        auto sprite = player->sprite;
-
-        if (!sprite)
-            continue;
-
-        auto position = sprite->getPosition();
-        position.x -= 250 * delta;
-        if (position.x < 0 - (player->getBoundingBox().size.width / 2))
-            position.x = this->getBoundingBox().getMaxX() + sprite->getBoundingBox().size.width / 2;
-        sprite->setPosition(position);
-    }*/
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)

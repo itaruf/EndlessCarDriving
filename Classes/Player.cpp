@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(Sprite* sprite, Vec2 position, Controller* controller, float movespeed) : Actor(sprite, position, controller, movespeed)
+Player::Player(Sprite* sprite, Vec2 position, CustomController* controller, float movespeed) : Actor(sprite, position, controller, movespeed)
 {
     init();
 }
@@ -15,8 +15,7 @@ bool Player::init()
 
     listener->onKeyPressed = CC_CALLBACK_2(Player::onKeyPressed, this);
     listener->onKeyReleased = CC_CALLBACK_2(Player::onKeyReleased, this);
-    /*_eventDispatcher->addEventListenerWithFixedPriority(listener, 1);*/
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    _eventDispatcher->addEventListenerWithFixedPriority(listener, 1);
 
     return true;
 }

@@ -9,7 +9,7 @@ private:
 	EventListenerKeyboard* listener{nullptr};
 	bool isKeyPressed{ false };
 public:
-	Player(Sprite* sprite = nullptr, Vec2 position = Vec2(0, 0), Controller* controller = nullptr, float movespeed = 0);
+	Player(Sprite* sprite = nullptr, Vec2 position = Vec2(0, 0), CustomController* controller = nullptr, float movespeed = 0);
 	~Player();
 
 	void update(float) override;

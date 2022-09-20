@@ -19,10 +19,16 @@
     <ClCompile Include="Classes\Player.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Classes\Controller.cpp">
+    <ClCompile Include="Classes\CustomController.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="Classes\Interactible.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\ObjectController.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\SpawnPoint.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,12 +72,16 @@
     <ClInclude Include="Classes\GameEvents.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Interactible.h" />
     <ClInclude Include="Classes\Interactible.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Controller.h" />
-    <ClInclude Include="Classes\Controller.h">
+    <ClInclude Include="Classes\CustomController.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\ObjectController.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\SpawnPoint.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

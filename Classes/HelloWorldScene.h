@@ -28,11 +28,16 @@
 #include "cocos2d.h"
 #include "GameEvents.h"
 #include "Actor.h"
+#include "SpawnPoint.h" 
+#include "Player.h"
+#include "ObjectController.h"
+#include "Interactible.h"
 
 class HelloWorld : public cocos2d::Scene
 {
 public:
     std::vector<Actor*> objects;
+    std::vector<SpawnPoint*> spawnPoints;
 
     static cocos2d::Scene* createScene();
 
