@@ -13,6 +13,12 @@
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Classes\Actor.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Player.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\AppDelegate.h">
@@ -45,6 +51,12 @@
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
+    <ClInclude Include="Classes\Actor.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Player.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\CMakeLists.txt" />
@@ -73,5 +85,52 @@
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{BD32102B-D48F-3B46-8418-E959DA013DAD}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\Assets">
+      <UniqueIdentifier>{7c3715bf-0831-46b7-a241-01b95b80bff3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Assets\backgroundColorFall.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\backgroundColorForest.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\backgroundColorGrass.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\character_zombie_sheet.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\female_tilesheet.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\flat.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\pixel_style2.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\roguelikeChar_transparent.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\roguelikeCity_magenta.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\sheet.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\soldier_tilesheet.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\spritesheet_default.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\tanks_spritesheetDefault.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\SportsRacingCar_0.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

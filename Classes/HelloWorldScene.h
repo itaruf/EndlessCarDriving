@@ -33,7 +33,9 @@ public:
     static cocos2d::Scene* createScene();
 
     virtual bool init();
-    
+
+    void update(float) override;
+
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
     
