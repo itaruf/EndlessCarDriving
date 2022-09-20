@@ -819,6 +819,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\main.cpp" />
     <ClInclude Include="Classes\Actor.h" />
+    <ClInclude Include="Classes\GameEvents.h" />
     <ClInclude Include="Classes\Player.h" />
     <ResourceCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\game.rc" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\CloseNormal.png" />

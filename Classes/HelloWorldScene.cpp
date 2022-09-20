@@ -49,20 +49,33 @@ static void problemLoading(const char* filename)
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    auto listener = EventListenerCustom::create("game_start_event", [=](EventCustom* event) {
+        std::string str("Custom event 1 received, ");
+
+        const std::string& tmp = "TRIGGERED";
+        auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
+        label->setPosition(Vec2(origin.x + visibleSize.width / 2,
+            origin.y + visibleSize.height - label->getContentSize().height));
+        this->addChild(label, 1);
+
+        });
+
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+
     // 1. super init first
     if (!Scene::init() || !Scene::initWithPhysics())
     {
         return false;
     }
 
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
+    // you may modify it. add a "close" icon to exit the progress. it's an autorelease object
 
-    // add a "close" icon to exit the progress. it's an autorelease object
     auto closeItem = MenuItemImage::create(
         "CloseNormal.png",
         "CloseSelected.png",
@@ -87,49 +100,50 @@ bool HelloWorld::init()
     this->addChild(menu, 1);
 
     Actor* actor = new Actor(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-    actor->sprite->setPhysicsBody(PhysicsBody::createBox(Size(100, 100)));
+    actor->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
     this->addChild(actor->sprite, 0);
+    objects.emplace_back(actor);
+
+    /*auto objects{ this->getChildren() };*/
+    const std::string& tmp = std::to_string(objects.size());
+    auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
+    label->setPosition(Vec2(origin.x + visibleSize.width / 2,
+        origin.y + visibleSize.height - label->getContentSize().height));
+    this->addChild(label, 1);
+
+    this->scheduleUpdate();
 
     return true;
 }
 
-void HelloWorld::update(float)
+void HelloWorld::update(float delta)
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    auto sprite = Sprite::create("Assets/SportsRacingCar_0.png");
-    const std::string& tmp = std::to_string(sprite->getSpriteFrame()->getRect().size.width);
-    auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
-
-    auto moveTo = MoveTo::create(2, Vec2(50, 10));
-    sprite->runAction(moveTo);
-
-    if (sprite == nullptr)
+    for (const auto& object : objects)
     {
-        problemLoading("'Assets/HelloWorld.png'");
-    }
-    else
-    {
-        // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+        object->setPosition(object->getPosition() + Vec2(0, 10));
+        auto moveTo = MoveTo::create(2, Vec2(0, 20));
+        auto actor = dynamic_cast<Actor*>(object);
 
-        // add the sprite as a child to this layer
-        this->addChild(sprite, 0);
-    }
+        EventCustom gameStartEvent("game_start_event");
+        _eventDispatcher->dispatchEvent(&gameStartEvent);
 
-    if (label == nullptr)
-    {
-        problemLoading("'fonts/Marker Felt.ttf'");
-    }
-    else
-    {
-        // position the label on the center of the screen
-        label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-            origin.y + visibleSize.height - label->getContentSize().height));
+        if (!actor)
+            continue;
 
-        // add the label as a child to this layer
-        this->addChild(label, 1);
+        auto sprite = actor->sprite;
+
+        if (!sprite)
+            continue;
+
+
+        auto position = sprite->getPosition();
+        position.x -= 250 * delta;
+        if (position.x < 0 - (actor->getBoundingBox().size.width / 2))
+            position.x = this->getBoundingBox().getMaxX() + sprite->getBoundingBox().size.width / 2;
+        sprite->setPosition(position);
     }
 }
 
@@ -142,6 +156,4 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 
     //EventCustom customEndEvent("game_scene_close_event");
     //_eventDispatcher->dispatchEvent(&customEndEvent);
-
-
 }

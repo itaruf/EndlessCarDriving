@@ -5,6 +5,7 @@ Actor::Actor(cocos2d::Sprite* sprite, cocos2d::Vec2 position) : sprite(sprite), 
 	if (!sprite)
 		return;
 
+	/*this->Node::create();*/
 	sprite->setPosition(position);
 }
 

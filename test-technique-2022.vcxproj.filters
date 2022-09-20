@@ -57,6 +57,9 @@
     <ClInclude Include="Classes\Player.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Classes\GameEvents.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\CMakeLists.txt" />

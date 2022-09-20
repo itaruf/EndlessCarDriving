@@ -2,7 +2,7 @@
 
 #include "cocos2d.h"
 
-class Actor
+class Actor : public cocos2d::Node
 {
 private:
 protected:
