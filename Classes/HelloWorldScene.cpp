@@ -85,7 +85,7 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    Player* player = new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    Player* player = new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10);
     player->sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
     this->addChild(player->sprite, 0);
     objects.emplace_back(player);

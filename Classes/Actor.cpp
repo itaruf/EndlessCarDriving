@@ -1,10 +1,9 @@
 #include "Actor.h"
 
-Actor::Actor(Sprite* sprite, Vec2 position, Controller* controller) : sprite(sprite), position(position), controller(controller)
+Actor::Actor(Sprite* sprite, Vec2 position, Controller* controller, float movespeed) : sprite(sprite), position(position), controller(controller), movespeed(movespeed)
 {
-	if (!this->sprite)
+	if (!sprite)
 		return;
-
 
 	/*this->Node::create();*/
     init();
