@@ -32,6 +32,7 @@
 #include "Player.h"
 #include "ObjectController.h"
 #include "Collectible.h"
+#include <algorithm>
 //#include "GameMode.h"
 
 class HelloWorld : public cocos2d::Scene

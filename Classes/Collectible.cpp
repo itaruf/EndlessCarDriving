@@ -7,6 +7,11 @@ Collectible::Collectible(Sprite* sprite, Vec2 position, CustomController* contro
 
 Collectible::~Collectible()
 {
+	/*if (sprite)
+		delete sprite;
+
+	if (controller)
+		delete controller;*/
 }
 
 bool Collectible::init()
@@ -24,11 +29,15 @@ void Collectible::Collect()
 	cocos2d::log("Collected");
 	GameEvents::current().CallEvent(GameEvents::current().playerScoretEvent);	
 
-	sprite->getParent()->removeChild(this, true);
+	/*sprite->removeFromParentAndCleanup(true);*/
+	unscheduleUpdate();
+	dynamic_cast<ObjectController*>(controller)->ResetPosition();
+	scheduleUpdate();
+
 }
 
 bool Collectible::onContactBegin(PhysicsContact& contact)
 {
-	cocos2d::log("CONTACT");
+	Collect();
 	return true;
 }

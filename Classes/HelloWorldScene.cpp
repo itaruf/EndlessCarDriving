@@ -67,7 +67,7 @@ bool HelloWorld::init()
 
     /*Props*/
 
-    ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
+  /*  ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
     Interactible* interactible = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
     interactible->setTag(1);
     this->addChild(interactible->sprite, 0);
@@ -77,7 +77,7 @@ bool HelloWorld::init()
     Interactible* interactible2 = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
     interactible2->setTag(1);
     this->addChild(interactible2->sprite, 0);
-    objects.emplace_back(interactible2);
+    objects.emplace_back(interactible2);*/
 
     ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
     Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 400), controller3, 10);
@@ -97,13 +97,29 @@ void HelloWorld::update(float delta)
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+   /* const std::string& tmp = std::to_string(getChildrenCount());
+    auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
+    label->setPosition(Vec2(origin.x + visibleSize.width / 2,
+        origin.y + visibleSize.height - label->getContentSize().height));
+    this->addChild(label, 1);*/
+
+    /*cocos2d::log("%d", getChildrenCount());*/
+
     for (const auto& object : objects) 
     {
         auto actor = dynamic_cast<Actor*>(object);
         if (actor)
         {
             actor->update(delta);
+            cocos2d::log("%d",  actor->getTag());
         }
+
+        /*else
+        {
+            objects.erase(std::find(objects.begin(), objects.end(), actor));
+            delete actor;
+            cocos2d::log("Destroying");
+        }*/
     }
 }
 

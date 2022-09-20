@@ -10,6 +10,12 @@ ObjectController::~ObjectController()
 
 void ObjectController::MoveHorizontally(float value)
 {
+	if (owner == nullptr)
+		return;
+
+	if (owner->sprite == nullptr)
+		return;
+
 	owner->sprite->setPosition(owner->sprite->getPosition() + direction * owner->movespeed);
 
 	/*auto sprite = owner->sprite;
@@ -31,4 +37,14 @@ void ObjectController::MoveVertically(float value)
 		position.y = owner->sprite->getParent()->getBoundingBox().getMaxY() + owner->sprite->getParent()->getBoundingBox().size.width / 2;
 	sprite->setPosition(position);
 
+}
+
+void ObjectController::ResetPosition()
+{
+	auto sprite = owner->sprite;
+	auto position = owner->sprite->getPosition();
+
+	position.y = owner->sprite->getParent()->getBoundingBox().getMaxY() + owner->sprite->getParent()->getBoundingBox().size.width / 2;
+
+	sprite->setPosition(position);
 }

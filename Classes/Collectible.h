@@ -2,6 +2,7 @@
 
 #include "Interactible.h"
 #include "GameMode.h"
+#include "ObjectController.h"
 
 class Collectible : public Interactible
 {

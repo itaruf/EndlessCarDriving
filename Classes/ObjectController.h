@@ -11,6 +11,7 @@ public:
 
 	void MoveHorizontally(float value) override;
 	void MoveVertically(float value) override;
+	void ResetPosition();
 
 private:
 
