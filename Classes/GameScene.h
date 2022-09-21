@@ -35,7 +35,7 @@
 #include "Obstacle.h"
 #include "PlayerHUD.h"
 
-class HelloWorld : public cocos2d::Scene
+class GameScene : public cocos2d::Scene
 {
 public:
     std::vector<Actor*> objects;
@@ -51,7 +51,7 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
-    CREATE_FUNC(HelloWorld);
+    CREATE_FUNC(GameScene);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

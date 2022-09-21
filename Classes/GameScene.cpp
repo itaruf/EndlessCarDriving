@@ -22,17 +22,17 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include "HelloWorldScene.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
-Scene* HelloWorld::createScene()
+Scene* GameScene::createScene()
 {
     auto scene = Scene::createWithPhysics();
     scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
     scene->getPhysicsWorld()->setDebugDrawMask(0xffff);
 
-    auto layer = HelloWorld::create();
+    auto layer = GameScene::create();
 
     scene->addChild(layer);
     return scene;
@@ -46,7 +46,7 @@ static void problemLoading(const char* filename)
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool GameScene::init()
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -82,16 +82,15 @@ bool HelloWorld::init()
     addChild(collectible->sprite, 0);
     objects.emplace_back(collectible);
 
-    /*Save::current().AddData("Hello", "Hello Message");*/
-    scheduleUpdate();
-
     PlayerHUD* playerHUD{ new PlayerHUD() };
     addChild(playerHUD, -1);
+
+    scheduleUpdate();
 
     return true;
 }
 
-void HelloWorld::update(float delta)
+void GameScene::update(float delta)
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -106,7 +105,7 @@ void HelloWorld::update(float delta)
     }
 }
 
-void HelloWorld::menuCloseCallback(Ref* pSender)
+void GameScene::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application
     Director::getInstance()->end();

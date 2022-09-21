@@ -4,7 +4,7 @@
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="Classes\GameScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\main.cpp">
@@ -54,7 +54,7 @@
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\HelloWorldScene.h">
+    <ClInclude Include="Classes\GameScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\main.h">
