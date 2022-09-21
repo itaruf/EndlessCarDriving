@@ -62,7 +62,7 @@ bool HelloWorld::init()
     player->sprite->getPhysicsBody()->setCollisionBitmask(0x02);
     player->sprite->getPhysicsBody()->setContactTestBitmask(0x02);
 
-    this->addChild(player->sprite, 0);
+    addChild(player->sprite, 0);
     objects.emplace_back(player);
     GameMode::current().player = player;
 
@@ -71,23 +71,23 @@ bool HelloWorld::init()
   ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
    Obstacle* obstacle = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
    obstacle->setTag(1);
-   this->addChild(obstacle->sprite, 0);
+   addChild(obstacle->sprite, 0);
    objects.emplace_back(obstacle);
 
    ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
    Obstacle* interactible2 = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
    interactible2->setTag(1);
-   this->addChild(interactible2->sprite, 0);
+   addChild(interactible2->sprite, 0);
    objects.emplace_back(interactible2);
 
     ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
     Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 400), 10, controller3, 10);
     collectible->setTag(1);
-    this->addChild(collectible->sprite, 0);
+    addChild(collectible->sprite, 0);
     objects.emplace_back(collectible);
 
     /*Save::current().AddData("Hello", "Hello Message");*/
-    this->scheduleUpdate();
+    scheduleUpdate();
 
     return true;
 }
@@ -96,6 +96,20 @@ void HelloWorld::update(float delta)
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    // Current Score
+     /*const std::string& score = std::to_string(GameState::current().score);
+     auto score_label = Label::createWithTTF(score, "fonts/Marker Felt.ttf", 24);
+     score_label->setPosition(Vec2(origin.x + visibleSize.width / 2,
+         origin.y + visibleSize.height - score_label->getContentSize().height));
+     addChild(score_label, 1);*/
+
+     // Highest registered score
+     /*const std::string& high_score = std::to_string(Save::current().data->getFloatForKey("Score"));
+     auto high_score_label = Label::createWithTTF(high_score, "fonts/Marker Felt.ttf", 24);
+     high_score_label->setPosition(Vec2(origin.x + visibleSize.width / 2,
+         origin.y - 50 + visibleSize.height - high_score_label->getContentSize().height));
+     addChild(high_score_label, 1);*/
 
     /*cocos2d::log("%s", Save::current().data->getStringForKey("Hello").c_str());*/
 
