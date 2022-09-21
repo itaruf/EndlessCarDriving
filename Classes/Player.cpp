@@ -64,6 +64,9 @@ void Player::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
         playerX -= movespeed;
         break;
 
+    case EventKeyboard::KeyCode::KEY_ESCAPE:
+        Director::getInstance()->end();
+
     default:
         break;
     }
