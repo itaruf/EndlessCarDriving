@@ -54,6 +54,9 @@ bool GameScene::init()
     if (!Scene::init() || !Scene::initWithPhysics())
         return false;
 
+    PlayerHUD* playerHUD{ new PlayerHUD() };
+    addChild(playerHUD, -1);
+
     /*Adding player to the scene*/
 
     Player* player = new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10);
@@ -64,26 +67,30 @@ bool GameScene::init()
 
     /*Props*/
 
+    for (int i = 0; i < nbSpawns; ++i)
+    {
+        SpawnPoint* spawn{ new SpawnPoint() };
+        spawn->setPosition(Vec2(Vec2(visibleSize.width / 2 + (i - 1) * 300 + origin.x, visibleSize.height / 2 + origin.y + 400)));
+        spawns.insert(std::pair<int, std::pair<SpawnPoint*, bool>>(i+1, std::pair<SpawnPoint*, bool>(spawn, false)));
+    }
+
     ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Obstacle* obstacle = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 - 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller, 10);
+    Obstacle* obstacle = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), spawns[1].first->getPosition(), controller, 10);
     obstacle->setTag(1);
     addChild(obstacle->sprite, 0);
     objects.emplace_back(obstacle);
 
     ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Obstacle* interactible2 = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
+    Obstacle* interactible2 = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), spawns[2].first->getPosition(), controller2, 10);
     interactible2->setTag(1);
     addChild(interactible2->sprite, 0);
     objects.emplace_back(interactible2);
 
     ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 400), 10, controller3, 10);
+    Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), spawns[3].first->getPosition(), 10, controller3, 10);
     collectible->setTag(1);
     addChild(collectible->sprite, 0);
     objects.emplace_back(collectible);
-
-    PlayerHUD* playerHUD{ new PlayerHUD() };
-    addChild(playerHUD, -1);
 
     scheduleUpdate();
 

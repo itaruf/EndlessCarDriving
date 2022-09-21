@@ -40,7 +40,9 @@ class GameScene : public cocos2d::Scene
 public:
     std::vector<Actor*> objects;
     std::vector<SpawnPoint*> spawnPoints;
-
+    std::unordered_map<int, std::pair<SpawnPoint*, bool>> spawns;
+    
+    int nbSpawns{ 3 };
     static cocos2d::Scene* createScene();
 
     virtual bool init();
