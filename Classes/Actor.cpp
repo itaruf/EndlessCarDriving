@@ -39,7 +39,6 @@ bool Actor::onContactBegin(PhysicsContact& contact)
 	if (((bodyA->getCategoryBitmask() & bodyB->getCollisionBitmask()) == 0) ||
 		((bodyB->getCategoryBitmask() & bodyA->getCategoryBitmask()) == 0))
 	{
-		cocos2d::log("COLLISION");
 		return true;
 	}
 	return false;

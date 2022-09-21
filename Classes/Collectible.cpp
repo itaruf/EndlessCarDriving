@@ -43,8 +43,6 @@ bool Collectible::init()
 
 void Collectible::Collect()
 {
-	cocos2d::log("Collected");
-
 	/*cocos2d::AudioEngine::play2d("Assets/coin.mp3", false, 0.05f);*/
 	cocos2d::AudioEngine::play2d("Assets/coin.mp3", false, 0.05f);
 
