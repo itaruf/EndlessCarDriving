@@ -2,7 +2,6 @@
 
 Obstacle::Obstacle(Sprite* sprite, Vec2 position, CustomController* controller, float movespeed) : Interactible(sprite, position, controller, movespeed)
 {
-	Interactible::init();
 	init();
 }
 
@@ -17,7 +16,6 @@ Obstacle::~Obstacle()
 
 bool Obstacle::init()
 {
-	setScale(2);
 	// Collision with the player
 	collisionListener = EventListenerPhysicsContactWithBodies::create(sprite->getPhysicsBody(), GameMode::current().player->sprite->getPhysicsBody());
 	collisionListener->onContactBegin = CC_CALLBACK_1(Obstacle::onContactBegin, this);

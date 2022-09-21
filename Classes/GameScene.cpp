@@ -30,11 +30,11 @@ Scene* GameScene::createScene()
 {
     auto scene = Scene::createWithPhysics();
     scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
-    scene->getPhysicsWorld()->setDebugDrawMask(0xffff);
+    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
     auto layer = GameScene::create();
-
     scene->addChild(layer);
+
     return scene;
 }
 
@@ -59,7 +59,7 @@ bool GameScene::init()
 
     /*Adding player to the scene*/
 
-    Player* player = new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10);
+    Player* player{ new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10) };
     player->setTag(0);
     addChild(player->sprite, 0);
     objects.emplace_back(player);
@@ -67,27 +67,42 @@ bool GameScene::init()
 
     /*Props*/
 
+    /*Wall* wall_left{Node::create()};*/
+
+    /*Wall* wall_left{ new Wall(Sprite::create("Assets/Icons/pixel_style2_20.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), Size(100, visibleSize.height))};*/
+    Wall* wall_left{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 + origin.x - 300, visibleSize.height / 2 + origin.y), nullptr, 0, Size(100, 100)) };
+    wall_left->sprite->setScale(5);
+    wall_left->setName("WALL");
+    addChild(wall_left->sprite, 0);
+    objects.emplace_back(wall_left);
+
     for (int i = 0; i < nbSpawns; ++i)
     {
         SpawnPoint* spawn{ new SpawnPoint() };
-        spawn->setPosition(Vec2(Vec2(visibleSize.width / 2 + (i - 1) * 300 + origin.x, visibleSize.height / 2 + origin.y + 400)));
+        spawn->setPosition(Vec2(visibleSize.width / 2 + (i - 1) * 300 + origin.x, visibleSize.height / 2 + origin.y + 400));
         spawns.insert(std::pair<int, std::pair<SpawnPoint*, bool>>(i+1, std::pair<SpawnPoint*, bool>(spawn, false)));
     }
 
+    /*Obstacle* obstacle0{ new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), spawns[1].first->getPosition(), nullptr, 0 )};
+    obstacle0->setTag(1);
+    addChild(obstacle0->sprite, 0);
+    objects.emplace_back(obstacle0);*/
+
+
     ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Obstacle* obstacle = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), spawns[1].first->getPosition(), controller, 10);
+    Obstacle* obstacle{ new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), spawns[1].first->getPosition(), controller, 10) };
     obstacle->setTag(1);
     addChild(obstacle->sprite, 0);
     objects.emplace_back(obstacle);
 
     ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Obstacle* interactible2 = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), spawns[2].first->getPosition(), controller2, 10);
+    Obstacle* interactible2{ new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), spawns[2].first->getPosition(), controller2, 10) };
     interactible2->setTag(1);
     addChild(interactible2->sprite, 0);
     objects.emplace_back(interactible2);
 
     ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), spawns[3].first->getPosition(), 10, controller3, 10);
+    Collectible* collectible{ new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), spawns[3].first->getPosition(), 10, controller3, 10) };
     collectible->setTag(1);
     addChild(collectible->sprite, 0);
     objects.emplace_back(collectible);
@@ -101,6 +116,16 @@ void GameScene::update(float delta)
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    for (const auto& object : getChildren())
+    {
+        /*auto actor = dynamic_cast<Actor*>(object);
+        if (actor)
+        {*/
+        /*cocos2d::log(object->getName().c_str());*/
+        object->update(delta);
+        /*}*/
+    }
 
     for (const auto& object : objects)
     {

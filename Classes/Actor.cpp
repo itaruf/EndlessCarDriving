@@ -7,16 +7,14 @@ Actor::Actor(Sprite* sprite, Vec2 position, CustomController* controller, float 
 
 	if (controller)
 		controller->owner = this;
-	/*this->Node::create();*/
+
+	log("HEY");
     init();
 }
 
 bool Actor::init()
 {
 	sprite->setPosition(position);
-	sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
-	sprite->getPhysicsBody()->setEnabled(true);
-	sprite->getPhysicsBody()->setDynamic(true);
 
 	/*auto cListener = EventListenerPhysicsContact::create();
 	cListener->onContactBegin = CC_CALLBACK_1(Actor::onContactBegin, this);

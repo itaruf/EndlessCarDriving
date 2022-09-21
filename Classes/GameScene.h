@@ -34,6 +34,7 @@
 #include "Save.h"
 #include "Obstacle.h"
 #include "PlayerHUD.h"
+#include "Wall.h"
 
 class GameScene : public cocos2d::Scene
 {

@@ -109,13 +109,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    /*auto scene = GameScene::createScene();*/
+    auto scene = GameScene::createScene();
 
-    auto main_scene = MainScene::createScene();
+    /*auto main_scene = MainScene::createScene();*/
     /*scenes.insert(std::pair<int, Scene*>(0, main_scene));*/
 
     // run
-    director->runWithScene(main_scene);
+    /*director->runWithScene(main_scene);*/
+    director->runWithScene(scene);
 
     return true;
 }

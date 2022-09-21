@@ -2,7 +2,6 @@
 
 Collectible::Collectible(Sprite* sprite, Vec2 position, float points, CustomController* controller, float movespeed) : Interactible(sprite, position, controller, movespeed), points(points)
 {
-	Interactible::init();
 	init();
 }
 

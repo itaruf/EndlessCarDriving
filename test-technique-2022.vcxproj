@@ -822,6 +822,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="Classes\PlayerHUD.cpp" />
     <ClCompile Include="Classes\Save.cpp" />
     <ClCompile Include="Classes\SpawnPoint.cpp" />
+    <ClCompile Include="Classes\Wall.cpp" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Classes\AppDelegate.h" />
     <ClInclude Include="Classes\GameScene.h" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\main.h" />
@@ -843,6 +844,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="Classes\PlayerHUD.h" />
     <ClInclude Include="Classes\Save.h" />
     <ClInclude Include="Classes\SpawnPoint.h" />
+    <ClInclude Include="Classes\Wall.h" />
     <ResourceCompile Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\game.rc" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\CloseNormal.png" />
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\CloseSelected.png" />
