@@ -2,6 +2,7 @@
 
 #include "cocos2d.h"
 #include "Actor.h"
+#include "GameMode.h"
 
 class Actor;
 class CustomController

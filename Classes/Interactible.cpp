@@ -14,7 +14,7 @@ bool Interactible::init()
 	sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
 	sprite->getPhysicsBody()->setRotationEnable(false);
 	sprite->getPhysicsBody()->setMass(1);
-
+	sprite->setScale(3);
 	sprite->getPhysicsBody()->setCategoryBitmask(0x02);
 	sprite->getPhysicsBody()->setCollisionBitmask(0x01);
 	sprite->getPhysicsBody()->setContactTestBitmask(0x01);
