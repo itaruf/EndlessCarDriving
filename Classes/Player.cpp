@@ -70,17 +70,12 @@ void Player::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
     default:
         break;
     }
-
-    /*sprite->setPosition(playerX , playerY);*/
-
-    /*cocos2d::log("PRESSED");*/
 }
 
 void Player::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 {
     /*return;*/
 
-    ///*isKeyPressed = false;*/
     switch (keyCode)
     {
         // MOVE UP
@@ -108,14 +103,10 @@ void Player::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
     default:
         break;
     }
-
-    //cocos2d::log("Released");
 }
 
 void Player::MoveHorizontally(float value)
 {
-    /*cocos2d::log("%.2f", value);*/
-
     float position = sprite->getPosition().x + (value * movespeed);
 
     sprite->setPosition(position, sprite->getPosition().y);
@@ -123,8 +114,6 @@ void Player::MoveHorizontally(float value)
 
 void Player::MoveVertically(float value)
 {
-    /*cocos2d::log("%.2f", value);*/
-
     float position = sprite->getPosition().y + (value * movespeed);
 
     sprite->setPosition(sprite->getPosition().x, position);

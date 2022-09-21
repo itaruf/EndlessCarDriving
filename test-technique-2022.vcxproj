@@ -815,6 +815,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="Classes\GameMode.cpp" />
     <ClCompile Include="Classes\GameState.cpp" />
     <ClCompile Include="Classes\Interactible.cpp" />
+    <ClCompile Include="Classes\MainScene.cpp" />
     <ClCompile Include="Classes\ObjectController.cpp" />
     <ClCompile Include="Classes\Obstacle.cpp" />
     <ClCompile Include="Classes\Player.cpp" />
@@ -835,6 +836,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="Classes\GameMode.h" />
     <ClInclude Include="Classes\GameState.h" />
     <ClInclude Include="Classes\Interactible.h" />
+    <ClInclude Include="Classes\MainScene.h" />
     <ClInclude Include="Classes\ObjectController.h" />
     <ClInclude Include="Classes\Obstacle.h" />
     <ClInclude Include="Classes\Player.h" />
