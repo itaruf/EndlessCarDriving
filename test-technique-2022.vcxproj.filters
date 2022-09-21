@@ -325,4 +325,15 @@
       <Filter>Resources\Assets</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Resources\Assets\coin.mp3">
+      <Filter>Resources\Assets</Filter>
+    </Media>
+    <Media Include="Resources\Assets\car_crash.mp3">
+      <Filter>Resources\Assets</Filter>
+    </Media>
+    <Media Include="Resources\Assets\car_move.mp3">
+      <Filter>Resources\Assets</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

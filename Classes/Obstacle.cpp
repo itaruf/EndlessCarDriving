@@ -41,6 +41,7 @@ bool Obstacle::init()
 
 bool Obstacle::onContactBegin(PhysicsContact& contact)
 {
+	cocos2d::AudioEngine::play2d("Assets/car_crash.mp3", false, 0.15f);
 	eventCollisionDispatcher->dispatchEvent(&GameEvents::current().gameEndEvent);
 	GameState::current().OnGameEnd();
 

@@ -4,6 +4,7 @@
 #include "GameMode.h"
 #include "ObjectController.h"
 #include "GameState.h"
+#include "audio/include/AudioEngine.h"
 
 class Obstacle : public Interactible
 {

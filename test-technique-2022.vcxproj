@@ -996,6 +996,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Resources\Assets\car_crash.mp3" />
+    <Media Include="Resources\Assets\car_move.mp3" />
+    <Media Include="Resources\Assets\coin.mp3" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

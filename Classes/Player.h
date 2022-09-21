@@ -1,14 +1,15 @@
 #pragma once
 
 #include "Actor.h"
+#include "audio/include/AudioEngine.h"
 
 class Player : public Actor
 {
-private:
-	Vec2 direction{ Vec2(0,0) };
-	EventListenerKeyboard* listener{nullptr};
-	bool isKeyPressed{ false };
 public:
+	Vec2 direction{ Vec2(0,0) };
+	EventListenerKeyboard* listener{ nullptr };
+	int  car_sfx_id{ 0 };
+
 	Player(Sprite* sprite = nullptr, Vec2 position = Vec2(0, 0), CustomController* controller = nullptr, float movespeed = 0);
 	~Player();
 

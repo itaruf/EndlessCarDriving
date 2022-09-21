@@ -1,4 +1,5 @@
 #include "Player.h"
+//#include <cocostudio/SimpleAudioEngine.cpp>
 
 Player::Player(Sprite* sprite, Vec2 position, CustomController* controller, float movespeed) : Actor(sprite, position, controller, movespeed)
 {
@@ -14,6 +15,8 @@ bool Player::init()
     sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
     /*sprite->getPhysicsBody()->setEnabled(true);
     sprite->getPhysicsBody()->setDynamic(true);*/
+
+    car_sfx_id = AudioEngine::play2d("Assets/car_move.mp3", true, 0.05f);
 
     sprite->setScale(2);
     sprite->getPhysicsBody()->setMass(1);
@@ -122,6 +125,9 @@ void Player::MoveHorizontally(float value)
 
 void Player::MoveVertically(float value)
 {
+    if (value == 0)
+        return;
+
     float position = sprite->getPosition().y + (value * movespeed);
 
     sprite->setPosition(sprite->getPosition().x, position);
