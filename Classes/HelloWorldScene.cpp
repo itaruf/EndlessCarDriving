@@ -86,7 +86,7 @@ bool HelloWorld::init()
     objects.emplace_back(collectible);
 
     GameMode::current().player = player;
-
+    /*Save::current().AddData("Hello", "Hello Message");*/
     this->scheduleUpdate();
 
     return true;
@@ -97,13 +97,7 @@ void HelloWorld::update(float delta)
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-   /* const std::string& tmp = std::to_string(getChildrenCount());
-    auto label = Label::createWithTTF(tmp, "fonts/Marker Felt.ttf", 24);
-    label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-        origin.y + visibleSize.height - label->getContentSize().height));
-    this->addChild(label, 1);*/
-
-    /*cocos2d::log("%d", getChildrenCount());*/
+    /*cocos2d::log("%s", Save::current().data->getStringForKey("Hello").c_str());*/
 
     for (const auto& object : objects) 
     {
@@ -111,7 +105,7 @@ void HelloWorld::update(float delta)
         if (actor)
         {
             actor->update(delta);
-            cocos2d::log("%d",  actor->getTag());
+            /*cocos2d::log("%d",  actor->getTag());*/
         }
 
         /*else
