@@ -16,7 +16,4 @@ public:
 		static GameMode game;
 		return game;
 	}
-
-private:
-
 };

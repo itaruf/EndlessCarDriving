@@ -9,7 +9,7 @@ public:
 
 	EventCustom gameStartEvent{ "game_start_event" };
 	EventCustom gameEndEvent{ "game_end_event" };
-	EventCustom playerScoretEvent{ "player_score_event" };
+	EventCustom playerScoreEvent{ "player_score_event" };
 
 	static GameEvents& current() 
 	{ 

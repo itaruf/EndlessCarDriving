@@ -64,28 +64,28 @@ bool HelloWorld::init()
 
     this->addChild(player->sprite, 0);
     objects.emplace_back(player);
+    GameMode::current().player = player;
 
     /*Props*/
 
-  /*  ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Interactible* interactible = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
-    interactible->setTag(1);
-    this->addChild(interactible->sprite, 0);
-    objects.emplace_back(interactible);
+  /* ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
+   Interactible* interactible = new Interactible(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
+   interactible->setTag(1);
+   this->addChild(interactible->sprite, 0);
+   objects.emplace_back(interactible);
 
-    ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Interactible* interactible2 = new Interactible(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
-    interactible2->setTag(1);
-    this->addChild(interactible2->sprite, 0);
-    objects.emplace_back(interactible2);*/
+   ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
+   Interactible* interactible2 = new Interactible(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
+   interactible2->setTag(1);
+   this->addChild(interactible2->sprite, 0);
+   objects.emplace_back(interactible2);*/
 
     ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 400), controller3, 10);
+    Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 400), 10, controller3, 10);
     collectible->setTag(1);
     this->addChild(collectible->sprite, 0);
     objects.emplace_back(collectible);
 
-    GameMode::current().player = player;
     /*Save::current().AddData("Hello", "Hello Message");*/
     this->scheduleUpdate();
 
@@ -99,21 +99,13 @@ void HelloWorld::update(float delta)
 
     /*cocos2d::log("%s", Save::current().data->getStringForKey("Hello").c_str());*/
 
-    for (const auto& object : objects) 
+    for (const auto& object : objects)
     {
         auto actor = dynamic_cast<Actor*>(object);
         if (actor)
         {
             actor->update(delta);
-            /*cocos2d::log("%d",  actor->getTag());*/
         }
-
-        /*else
-        {
-            objects.erase(std::find(objects.begin(), objects.end(), actor));
-            delete actor;
-            cocos2d::log("Destroying");
-        }*/
     }
 }
 
