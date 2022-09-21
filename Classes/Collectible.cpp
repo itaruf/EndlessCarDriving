@@ -16,6 +16,14 @@ Collectible::~Collectible()
 
 bool Collectible::init()
 {
+	sprite->setPhysicsBody(PhysicsBody::createBox(Size(32, 32)));
+	Interactible::init();
+
+	sprite->getPhysicsBody()->setCategoryBitmask(0x02);
+	sprite->getPhysicsBody()->setCollisionBitmask(0x01);
+	sprite->getPhysicsBody()->setContactTestBitmask(0x01);
+	sprite->setScale(2);
+
 	// Collision with the player
 	collisionListener = EventListenerPhysicsContactWithBodies::create(sprite->getPhysicsBody(), GameMode::current().player->sprite->getPhysicsBody());
 	collisionListener->onContactBegin = CC_CALLBACK_1(Collectible::onContactBegin, this);

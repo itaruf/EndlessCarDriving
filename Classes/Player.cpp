@@ -15,6 +15,7 @@ bool Player::init()
     /*sprite->getPhysicsBody()->setEnabled(true);
     sprite->getPhysicsBody()->setDynamic(true);*/
 
+    sprite->setScale(2);
     sprite->getPhysicsBody()->setMass(1);
     sprite->getPhysicsBody()->setCategoryBitmask(0x01);
     sprite->getPhysicsBody()->setCollisionBitmask(0x02);
@@ -71,6 +72,7 @@ void Player::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
         break;
 
     case EventKeyboard::KeyCode::KEY_ESCAPE:
+        GameEvents::current().CallEvent(GameEvents::current().gameEndEvent);
         Director::getInstance()->end();
 
     default:

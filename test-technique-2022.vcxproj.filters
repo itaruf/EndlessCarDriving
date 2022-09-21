@@ -300,5 +300,11 @@
     <Image Include="Resources\Assets\Icons\pixel_style2_29.png">
       <Filter>Resources\Icons</Filter>
     </Image>
+    <Image Include="Resources\Assets\roguelikeCity_magenta_671.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\coin.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

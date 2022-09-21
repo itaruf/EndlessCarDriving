@@ -91,25 +91,25 @@ bool GameScene::init()
     }
 
     ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Obstacle* obstacle{ new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), GameMode::current().spawns[1].first->getPosition(), controller, 12) };
+    Obstacle* obstacle{ new Obstacle(Sprite::create("Assets/roguelikeCity_magenta_671.png"), GameMode::current().spawns[1].first->getPosition(), controller, 12) };
     obstacle->setTag(1);
     addChild(obstacle->sprite, 0);
     objects.emplace_back(obstacle);
 
     ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Obstacle* obstacle2{ new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), GameMode::current().spawns[2].first->getPosition(), controller2, 8) };
+    Obstacle* obstacle2{ new Obstacle(Sprite::create("Assets/roguelikeCity_magenta_671.png"), GameMode::current().spawns[2].first->getPosition(), controller2, 8) };
     obstacle2->setTag(1);
     addChild(obstacle2->sprite, 0);
     objects.emplace_back(obstacle2);
 
     ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Collectible* collectible{ new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), GameMode::current().spawns[3].first->getPosition(), 10, controller3, 10) };
+    Collectible* collectible{ new Collectible(Sprite::create("Assets/coin.png"), GameMode::current().spawns[3].first->getPosition(), 10, controller3, 10) };
     collectible->setTag(1);
     addChild(collectible->sprite, 0);
     objects.emplace_back(collectible);
 
     ObjectController* controller4{ new ObjectController(nullptr, Vec2(0,-1)) };
-    Collectible* collectible2{ new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), GameMode::current().spawns[4].first->getPosition(), 10, controller4, 6) };
+    Collectible* collectible2{ new Collectible(Sprite::create("Assets/coin.png"), GameMode::current().spawns[4].first->getPosition(), 10, controller4, 6) };
     collectible2->setTag(1);
     addChild(collectible2->sprite, 0);
     objects.emplace_back(collectible2);
