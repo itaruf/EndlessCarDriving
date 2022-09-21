@@ -306,5 +306,17 @@
     <Image Include="Resources\Assets\coin.png">
       <Filter>Resources\Assets</Filter>
     </Image>
+    <Image Include="Resources\Assets\roguelikeCity_magenta_789.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\roguelikeCity_magenta_790.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\roguelikeCity_magenta_709.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
+    <Image Include="Resources\Assets\roguelikeCity_magenta_795.png">
+      <Filter>Resources\Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -25,17 +25,18 @@ bool Collectible::init()
 	sprite->setScale(2);
 
 	// Collision with the player
+
 	collisionListener = EventListenerPhysicsContactWithBodies::create(sprite->getPhysicsBody(), GameMode::current().player->sprite->getPhysicsBody());
 	collisionListener->onContactBegin = CC_CALLBACK_1(Collectible::onContactBegin, this);
 	eventCollisionDispatcher->addEventListenerWithFixedPriority(collisionListener, 1);
 
 	// On Collect Event Dispatcher
-	collectListener = EventListenerCustom::create(GameEvents::current().playerScoreEvent.getEventName(), [this](EventCustom* event)
+	/*collectListener = EventListenerCustom::create(GameEvents::current().playerScoreEvent.getEventName(), [this](EventCustom* event)
 		{
 			GameState::current().SetScore(points);
 		});
 
-	eventCollectDispatcher->addEventListenerWithFixedPriority(collectListener, 1);
+	eventCollectDispatcher->addEventListenerWithFixedPriority(collectListener, 1);*/
 
 	return true;
 }
@@ -43,7 +44,9 @@ bool Collectible::init()
 void Collectible::Collect()
 {
 	cocos2d::log("Collected");
-	eventCollectDispatcher->dispatchEvent(&GameEvents::current().playerScoreEvent);
+
+	//eventCollectDispatcher->dispatchEvent(&GameEvents::current().playerScoreEvent);
+	GameState::current().SetScore(points);
 
 	unscheduleUpdate();
 	dynamic_cast<ObjectController*>(controller)->ResetPosition();

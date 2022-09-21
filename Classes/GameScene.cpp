@@ -55,23 +55,55 @@ bool GameScene::init()
         return false;
 
     PlayerHUD* playerHUD{ new PlayerHUD() };
-    addChild(playerHUD, -1);
+    addChild(playerHUD, 0);
 
-    /*Adding player to the scene*/
-
-    Player* player{ new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10) };
-    player->setTag(0);
-    addChild(player->sprite, 0);
-    objects.emplace_back(player);
-    GameMode::current().player = player;
+    int offset = 384;
 
     /*Props*/
+    for (int j = 0; j < (visibleSize.height - offset * 2) / 32; j++)
+    {
+        for (int i = 0; i < (visibleSize.width - offset * 2) / 32; i++)
+        {
+            auto sprite = Sprite::create("Assets/roguelikeCity_magenta_709.png");
+            sprite->setScale(2);
+            sprite->setPosition(Vec2(offset + 16 + i * 32, 16 + j * 32));
+            addChild(sprite, -1);
+        }
+    }
 
-    Wall* wall_left{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 - 750 + origin.x, visibleSize.height / 2 + origin.y), Size(250, visibleSize.height)) };
+    for (int j = (visibleSize.height - offset * 2) / 32; j < (visibleSize.height - offset * 2) / 32 + 1; j++)
+    {
+        for (int i = 0; i < (visibleSize.width - offset * 2) / 64; i++)
+        {
+            auto sprite = Sprite::create("Assets/roguelikeCity_magenta_795.png");
+            sprite->setScale(2);
+            sprite->setPosition(Vec2(offset + 16 + i * 64, 16 + j * 32));
+
+            auto sprite2 = Sprite::create("Assets/roguelikeCity_magenta_709.png");
+            sprite2->setScale(2);
+            sprite2->setPosition(Vec2(offset + 48 + i * 64, 16 + j * 32));
+            addChild(sprite, -1);
+            addChild(sprite2, -1);
+        }
+    }
+
+    for (int j = (visibleSize.height - offset * 2) / 32 + 1; j < (visibleSize.height) / 32; j++)
+    {
+        for (int i = 0; i < (visibleSize.width - offset * 2) / 32; i++)
+        {
+            auto sprite = Sprite::create("Assets/roguelikeCity_magenta_709.png");
+            sprite->setScale(2);
+            sprite->setPosition(Vec2(offset + 16 + i * 32, 16 + j * 32));
+            addChild(sprite, -1);
+        }
+    }
+
+
+    Wall* wall_left{ new Wall(Sprite::create("Assets/roguelikeCity_magenta_790.png"), Vec2(visibleSize.width / 2 - 750 + origin.x, visibleSize.height / 2 + origin.y), Size(250, visibleSize.height)) };
     wall_left->sprite->setScale(1);
     addChild(wall_left->sprite, 0);
 
-    Wall* wall_right{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 + 750 + origin.x, visibleSize.height / 2 - origin.y), Size(250, visibleSize.height)) };
+    Wall* wall_right{ new Wall(Sprite::create("Assets/roguelikeCity_magenta_789.png"), Vec2(visibleSize.width / 2 + 750 + origin.x, visibleSize.height / 2 - origin.y), Size(250, visibleSize.height)) };
     wall_right->sprite->setScale(1);
     addChild(wall_right->sprite, 0);
 
@@ -89,6 +121,14 @@ bool GameScene::init()
         spawn->setPosition(Vec2(visibleSize.width / 4 + (i) * visibleSize.width / 6, visibleSize.height / 2 + origin.y + 750));
         GameMode::current().spawns.insert(std::pair<int, std::pair<SpawnPoint*, bool>>(i+1, std::pair<SpawnPoint*, bool>(spawn, false)));
     }
+
+    /*Adding player to the scene*/
+
+    Player* player{ new Player(Sprite::create("Assets/SportsRacingCar_0.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), nullptr, 10) };
+    player->setTag(0);
+    addChild(player->sprite, 0);
+    objects.emplace_back(player);
+    GameMode::current().player = player;
 
     ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
     Obstacle* obstacle{ new Obstacle(Sprite::create("Assets/roguelikeCity_magenta_671.png"), GameMode::current().spawns[1].first->getPosition(), controller, 12) };

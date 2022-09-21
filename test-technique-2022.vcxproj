@@ -976,6 +976,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>
     <Image Include="Resources\Assets\roguelikeCity_magenta_671.png" />
+    <Image Include="Resources\Assets\roguelikeCity_magenta_709.png" />
+    <Image Include="Resources\Assets\roguelikeCity_magenta_789.png" />
+    <Image Include="Resources\Assets\roguelikeCity_magenta_790.png" />
+    <Image Include="Resources\Assets\roguelikeCity_magenta_795.png" />
     <Image Include="Resources\Assets\sheet.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>
