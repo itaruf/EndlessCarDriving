@@ -1,44 +1,32 @@
 #include "Wall.h"
 
-Wall::Wall(Sprite* sprite, Vec2 position, CustomController* controller, float movespeed, Size size) : Actor(sprite, position, controller, movespeed), size(size)
-{
-	Wall::init();
-}
-
-//Wall::Wall(Sprite* sprite, Vec2& position, Size& size) : sprite(sprite), position(position), size(size)
+//Wall::Wall(Sprite* sprite, Vec2 position, CustomController* controller, float movespeed, Size size) : Actor(sprite, position, controller, movespeed), size(size)
 //{
 //	Wall::init();
 //}
 
-Wall::~Wall()
+Wall::Wall(Sprite* sprite, Vec2& position, Size& size) : sprite(sprite), position(position), size(size)
 {
-}
+	this->sprite->setPhysicsBody(cocos2d::PhysicsBody::createBox(size));
+	this->sprite->getPhysicsBody()->setMass(2000);
+	sprite->getPhysicsBody()->setRotationEnable(false);
 
-bool Wall::init()
-{
-	auto visibleSize = Director::getInstance()->getVisibleSize();
-	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-	sprite->setPhysicsBody(cocos2d::PhysicsBody::createBox(Size(50, 500)));
-
-	sprite->getPhysicsBody()->setMass(1000);
-	sprite->getPhysicsBody()->setEnabled(true);
-	sprite->getPhysicsBody()->setDynamic(true);
-
-	/*this->sprite->setPosition(this->position);
-	this->sprite->setPhysicsBody(cocos2d::PhysicsBody::createBox(this->size));
-	this->sprite->getPhysicsBody()->setEnabled(true);
-	this->sprite->getPhysicsBody()->setDynamic(true);*/
-
-	this->sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-
-	/*log("%f", this->sprite->getPosition().x);*/
+	this->sprite->getPhysicsBody()->setAngularDamping(1);
+	this->sprite->getPhysicsBody()->setVelocityLimit(0);
 
 	sprite->getPhysicsBody()->setCategoryBitmask(0x02);
 	sprite->getPhysicsBody()->setCollisionBitmask(0x01);
 	sprite->getPhysicsBody()->setContactTestBitmask(0x01);
 
-	log("HERE");
+	this->sprite->setPosition(position);
 
-	return true;
+	/*log("%f", this->this->sprite->getPosition().x);*/
+
+	this->sprite->getPhysicsBody()->setCategoryBitmask(0x02);
+	this->sprite->getPhysicsBody()->setCollisionBitmask(0x01);
+	this->sprite->getPhysicsBody()->setContactTestBitmask(0x01);
+}
+
+Wall::~Wall()
+{
 }

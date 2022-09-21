@@ -67,14 +67,21 @@ bool GameScene::init()
 
     /*Props*/
 
-    /*Wall* wall_left{Node::create()};*/
-
-    /*Wall* wall_left{ new Wall(Sprite::create("Assets/Icons/pixel_style2_20.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y), Size(100, visibleSize.height))};*/
-    Wall* wall_left{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 + origin.x - 300, visibleSize.height / 2 + origin.y), nullptr, 0, Size(100, 100)) };
-    wall_left->sprite->setScale(5);
-    wall_left->setName("WALL");
+    Wall* wall_left{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 - 600 + origin.x, visibleSize.height / 2 + origin.y), Size(350, visibleSize.height)) };
+    wall_left->sprite->setScale(1);
     addChild(wall_left->sprite, 0);
-    objects.emplace_back(wall_left);
+
+    Wall* wall_right{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 + 600 + origin.x, visibleSize.height / 2 - origin.y), Size(350, visibleSize.height)) };
+    wall_right->sprite->setScale(1);
+    addChild(wall_right->sprite, 0);
+
+    Wall* wall_top{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height), Size(visibleSize.width / 2 + 350, 350)) };
+    wall_top->sprite->setScale(1);
+    addChild(wall_top->sprite, 0);
+
+    Wall* wall_bot{ new Wall(Sprite::create("Assets/Icons/pixel_style2_18.png"), Vec2(visibleSize.width / 2 + origin.x, 0 + origin.y), Size(visibleSize.width / 2 + 350, 350)) };
+    wall_bot->sprite->setScale(1);
+    addChild(wall_bot->sprite, 0);
 
     for (int i = 0; i < nbSpawns; ++i)
     {

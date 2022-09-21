@@ -15,9 +15,11 @@ bool Player::init()
     /*sprite->getPhysicsBody()->setEnabled(true);
     sprite->getPhysicsBody()->setDynamic(true);*/
 
+    sprite->getPhysicsBody()->setMass(1);
     sprite->getPhysicsBody()->setCategoryBitmask(0x01);
     sprite->getPhysicsBody()->setCollisionBitmask(0x02);
     sprite->getPhysicsBody()->setContactTestBitmask(0x02);
+    sprite->getPhysicsBody()->setRotationEnable(false);
 
     listener = EventListenerKeyboard::create();
 
@@ -46,13 +48,13 @@ void Player::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
     case EventKeyboard::KeyCode::KEY_W:
     /*case EventKeyboard::KeyCode::KEY_Z:*/
         direction.y = 1;
-        playerY += movespeed;
+        /*playerY += movespeed;*/
         break;
 
         // MOVE DOWN
     case EventKeyboard::KeyCode::KEY_S:
         direction.y = -1;
-        playerY -= movespeed;
+        /*playerY -= movespeed;*/
         break;
 
         // MOVE LEFT
@@ -65,7 +67,7 @@ void Player::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
         // MOVE RIGHT
     case EventKeyboard::KeyCode::KEY_D:
         direction.x = 1;
-        playerX -= movespeed;
+        /*playerX -= movespeed;*/
         break;
 
     case EventKeyboard::KeyCode::KEY_ESCAPE:

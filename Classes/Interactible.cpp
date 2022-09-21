@@ -12,8 +12,8 @@ Interactible::~Interactible()
 bool Interactible::init()
 {
 	sprite->setPhysicsBody(PhysicsBody::createBox(Size(50, 50)));
-	/*sprite->getPhysicsBody()->setEnabled(true);
-	sprite->getPhysicsBody()->setDynamic(true);*/
+	sprite->getPhysicsBody()->setRotationEnable(false);
+	sprite->getPhysicsBody()->setMass(1);
 
 	sprite->getPhysicsBody()->setCategoryBitmask(0x02);
 	sprite->getPhysicsBody()->setCollisionBitmask(0x01);
