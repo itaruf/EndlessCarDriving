@@ -32,7 +32,7 @@ void GameState::OnGameEnd()
 
 	/*_eventDispatcher->remove*/
 	_eventDispatcher->removeAllEventListeners();
-	Director::getInstance()->pushScene(value);
+	/*Director::getInstance()->pushScene(value);*/
 	Director::getInstance()->replaceScene(scene);
 }
 

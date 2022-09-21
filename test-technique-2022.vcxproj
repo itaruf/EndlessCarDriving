@@ -969,6 +969,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Image Include="Resources\Assets\pixel_style2.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>
+    <Image Include="Resources\Assets\Play.png" />
     <Image Include="Resources\Assets\roguelikeChar_transparent.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>
@@ -980,6 +981,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <Image Include="Resources\Assets\roguelikeCity_magenta_789.png" />
     <Image Include="Resources\Assets\roguelikeCity_magenta_790.png" />
     <Image Include="Resources\Assets\roguelikeCity_magenta_795.png" />
+    <Image Include="Resources\Assets\Score.png" />
     <Image Include="Resources\Assets\sheet.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </Image>

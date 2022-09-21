@@ -28,20 +28,18 @@ bool MainScene::init()
     PlayerHUD* playerHUD{ new PlayerHUD() };
     addChild(playerHUD, 0);
 
-    auto description = Label::createWithTTF("Dodge obstacles while collecting pieces !", "fonts/Marker Felt.ttf", 24);
+    auto description = Label::createWithTTF("Dodge obstacles while collecting pieces !", "fonts/Marker Felt.ttf", 32);
     description->setPosition(Vec2(origin.x + visibleSize.width / 2,
-        origin.y - 500 + visibleSize.height - description->getContentSize().height));
+        origin.y + visibleSize.height / 2 + description->getContentSize().height * 4));
     addChild(description, 1);
 
-    auto button = ui::Button::create("Assets/Icons/pixel_style2_15.png", "Assets/Icons/pixel_style2_15.png", "Assets/Icons/pixel_style2_15.png");
+    auto button = ui::Button::create("Assets/Play.png", "Assets/Play.png", "Assets/Play.png");
 
-    button->setTitleText("PLAY !");
+    /*button->setTitleText("PLAY !");*/
     button->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-    button->setScale(4);
-
     button->addTouchEventListener(CC_CALLBACK_2(MainScene::buttonPressed, this));
     
-    this->addChild(button);
+    this->addChild(button, 1);
 
     scheduleUpdate();
 
