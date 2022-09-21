@@ -37,7 +37,7 @@ public:
     AppDelegate();
     virtual ~AppDelegate();
 
-    std::unordered_map<int, cocos2d::Scene*> scenes;
+    static std::unordered_map<int, cocos2d::Scene*> scenes;
 
     virtual void initGLContextAttrs();
 

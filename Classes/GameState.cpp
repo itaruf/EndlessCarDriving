@@ -25,6 +25,13 @@ void GameState::OnGameEnd()
 
 	if (score > Save::current().data->getFloatForKey("Score"))
 		Save::current().AddData("Score", score);
+
+	auto value = AppDelegate::scenes.at(0);
+	auto scene = MainScene::createScene();
+
+	/*_eventDispatcher->remove*/
+	Director::getInstance()->pushScene(value);
+	Director::getInstance()->replaceScene(scene);
 }
 
 void GameState::SetScore(float value)

@@ -3,6 +3,9 @@
 #include "Save.h"
 #include "cocos2d.h"
 #include "GameEvents.h"
+#include "GameScene.h"
+#include "MainScene.h"
+#include "AppDelegate.h"
 
 USING_NS_CC;
 

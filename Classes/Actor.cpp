@@ -8,8 +8,7 @@ Actor::Actor(Sprite* sprite, Vec2 position, CustomController* controller, float 
 	if (controller)
 		controller->owner = this;
 
-	log("HEY");
-    init();
+	init();
 }
 
 bool Actor::init()

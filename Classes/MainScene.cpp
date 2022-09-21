@@ -28,9 +28,14 @@ bool MainScene::init()
     PlayerHUD* playerHUD{ new PlayerHUD() };
     addChild(playerHUD, 0);
 
+    auto description = Label::createWithTTF("Dodge obstacles while collecting pieces !", "fonts/Marker Felt.ttf", 24);
+    description->setPosition(Vec2(origin.x + visibleSize.width / 2,
+        origin.y - 500 + visibleSize.height - description->getContentSize().height));
+    addChild(description, 1);
+
     auto button = ui::Button::create("Assets/Icons/pixel_style2_15.png", "Assets/Icons/pixel_style2_15.png", "Assets/Icons/pixel_style2_15.png");
 
-    button->setTitleText("Button Text");
+    button->setTitleText("PLAY !");
     button->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     button->setScale(4);
 
