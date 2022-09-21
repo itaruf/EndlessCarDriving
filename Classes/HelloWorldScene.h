@@ -33,6 +33,7 @@
 #include <algorithm>
 #include "Save.h"
 #include "Obstacle.h"
+#include "PlayerHUD.h"
 
 class HelloWorld : public cocos2d::Scene
 {

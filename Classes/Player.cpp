@@ -11,6 +11,10 @@ Player::~Player()
 
 bool Player::init()
 {
+    sprite->getPhysicsBody()->setCategoryBitmask(0x01);
+    sprite->getPhysicsBody()->setCollisionBitmask(0x02);
+    sprite->getPhysicsBody()->setContactTestBitmask(0x02);
+
     listener = EventListenerKeyboard::create();
 
     listener->onKeyPressed = CC_CALLBACK_2(Player::onKeyPressed, this);
