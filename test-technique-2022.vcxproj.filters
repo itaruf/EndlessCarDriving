@@ -69,23 +69,11 @@
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\proj.win32\resource.h">
       <Filter>Source Files\proj.win32</Filter>
     </ClInclude>
-    <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\CloseNormal.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\CloseSelected.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\HelloWorld.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\fonts\Marker Felt.ttf">
       <Filter>Resources\fonts</Filter>
     </ClInclude>
     <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\fonts\arial.ttf">
       <Filter>Resources\fonts</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\testtechnique-cocosproject\testtechnique-cocosproject\test-technique-2022\Resources\res\.gitkeep">
-      <Filter>Resources\res</Filter>
     </ClInclude>
     <ClInclude Include="Classes\Actor.h">
       <Filter>Source Files\Classes</Filter>
@@ -148,9 +136,6 @@
     <Filter Include="Resources\fonts">
       <UniqueIdentifier>{6BCDE5DF-6548-306F-8FF3-C8454BF98ADC}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\res">
-      <UniqueIdentifier>{751E23E5-FA29-3BF4-9A86-BAEA602FCC37}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{75DE2C66-902F-38E4-9075-65FC372C01CD}</UniqueIdentifier>
     </Filter>
@@ -168,136 +153,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\Assets\backgroundColorFall.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\backgroundColorForest.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\backgroundColorGrass.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\character_zombie_sheet.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\female_tilesheet.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\flat.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\pixel_style2.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\roguelikeChar_transparent.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\roguelikeCity_magenta.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\sheet.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\soldier_tilesheet.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\spritesheet_default.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
-    <Image Include="Resources\Assets\tanks_spritesheetDefault.png">
-      <Filter>Resources\Assets</Filter>
-    </Image>
     <Image Include="Resources\Assets\SportsRacingCar_0.png">
       <Filter>Resources\Assets</Filter>
     </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_0.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_1.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_2.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_3.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_4.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_5.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_6.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_7.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_8.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_9.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_10.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_11.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_12.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_13.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_14.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_15.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_16.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_17.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
     <Image Include="Resources\Assets\Icons\pixel_style2_18.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_19.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_20.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_21.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_22.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_23.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_24.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_25.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_26.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_27.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_28.png">
-      <Filter>Resources\Icons</Filter>
-    </Image>
-    <Image Include="Resources\Assets\Icons\pixel_style2_29.png">
       <Filter>Resources\Icons</Filter>
     </Image>
     <Image Include="Resources\Assets\roguelikeCity_magenta_671.png">
