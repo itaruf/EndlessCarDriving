@@ -1,8 +1,12 @@
 #pragma once
+
 #include "Save.h"
 #include "cocos2d.h"
+#include "GameEvents.h"
 
-class GameState
+USING_NS_CC;
+
+class GameState : public cocos2d::Node
 {
 public:
 	float score = 0;

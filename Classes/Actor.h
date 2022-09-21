@@ -14,8 +14,7 @@ class Actor : public Node
 private:
 protected:
 public:
-	EventDispatcher* _eventCollisionDispatcher = _director->getEventDispatcher();
-	/*EventDispatcher* _eventKeyBoard = _director->getEventDispatcher();*/
+	EventDispatcher* eventCollisionDispatcher = _director->getEventDispatcher();
 
 	// fields
 	Sprite* sprite{ nullptr };
@@ -29,10 +28,6 @@ public:
 	void update(float) override;
 	bool init() override;
 
-	void isColliding(std::vector<Actor*>& objects);
-
 	virtual bool onContactBegin(PhysicsContact& contact);
-	/*void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);*/
-
 };
 

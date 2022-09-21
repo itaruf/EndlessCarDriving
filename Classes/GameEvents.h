@@ -21,6 +21,4 @@ public:
 	{
 		_eventDispatcher->dispatchEvent(&event);
 	}
-
-	// Pour utiliser l'instance statique : exemple : GameEvents.current().gameStartEvent
 };

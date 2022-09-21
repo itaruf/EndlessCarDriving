@@ -5,12 +5,11 @@
 #include "ObjectController.h"
 #include "GameState.h"
 
-class Collectible : public Interactible
+class Obstacle : public Interactible
 {
 public:
-	float points = 10.2f;
-	Collectible(Sprite* sprite = nullptr, Vec2 position = Vec2(0, 0), float points = 10.2f, CustomController* controller = nullptr, float movespeed = 0);
-	~Collectible();
+	Obstacle(Sprite* sprite = nullptr, Vec2 position = Vec2(0, 0), CustomController* controller = nullptr, float movespeed = 0);
+	~Obstacle();
 
 	EventDispatcher* eventCollectDispatcher = _director->getEventDispatcher();
 	EventListenerPhysicsContactWithBodies* collisionListener;
@@ -19,9 +18,4 @@ public:
 	bool init() override;
 
 	bool onContactBegin(PhysicsContact& contact) override;
-
-	void Collect();
-
-private:
-
 };

@@ -32,6 +32,7 @@
 #include "Collectible.h"
 #include <algorithm>
 #include "Save.h"
+#include "Obstacle.h"
 
 class HelloWorld : public cocos2d::Scene
 {

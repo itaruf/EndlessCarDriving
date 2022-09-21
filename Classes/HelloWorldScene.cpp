@@ -68,17 +68,17 @@ bool HelloWorld::init()
 
     /*Props*/
 
-  /* ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
-   Interactible* interactible = new Interactible(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
-   interactible->setTag(1);
-   this->addChild(interactible->sprite, 0);
-   objects.emplace_back(interactible);
+  ObjectController* controller{ new ObjectController(nullptr, Vec2(0,-1)) };
+   Obstacle* obstacle = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 - 200 + origin.x , visibleSize.height / 2 + origin.y + 400), controller, 10);
+   obstacle->setTag(1);
+   this->addChild(obstacle->sprite, 0);
+   objects.emplace_back(obstacle);
 
    ObjectController* controller2{ new ObjectController(nullptr, Vec2(0,-1)) };
-   Interactible* interactible2 = new Interactible(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
+   Obstacle* interactible2 = new Obstacle(Sprite::create("Assets/Icons/pixel_style2_15.png"), Vec2(visibleSize.width / 2 + 200 + origin.x, visibleSize.height / 2 + origin.y + 400), controller2, 10);
    interactible2->setTag(1);
    this->addChild(interactible2->sprite, 0);
-   objects.emplace_back(interactible2);*/
+   objects.emplace_back(interactible2);
 
     ObjectController* controller3{ new ObjectController(nullptr, Vec2(0,-1)) };
     Collectible* collectible = new Collectible(Sprite::create("Assets/Icons/pixel_style2_23.png"), Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 400), 10, controller3, 10);

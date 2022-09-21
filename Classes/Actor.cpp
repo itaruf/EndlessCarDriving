@@ -18,10 +18,9 @@ bool Actor::init()
 	sprite->getPhysicsBody()->setEnabled(true);
 	sprite->getPhysicsBody()->setDynamic(true);
 
-	
-	auto cListener = EventListenerPhysicsContact::create();
+	/*auto cListener = EventListenerPhysicsContact::create();
 	cListener->onContactBegin = CC_CALLBACK_1(Actor::onContactBegin, this);
-	_eventCollisionDispatcher->addEventListenerWithFixedPriority(cListener, 1);
+	eventCollisionDispatcher->addEventListenerWithFixedPriority(cListener, 1);*/
 
 	/*auto listener = EventListenerKeyboard::create();
 
@@ -33,28 +32,6 @@ bool Actor::init()
 void Actor::update(float delta)
 {
 	/*log("hey");*/
-}
-
-
-void Actor::isColliding(std::vector<Actor*>& objects)
-{
-	return;
-
-	/*cocos2d::log("Checking");*/
-	for (const auto& object : objects)
-	{
-		if (object == this)
-			continue;
-
-		if ((sprite->getPhysicsBody()->getCategoryBitmask() & object->sprite->getPhysicsBody()->getCollisionBitmask()) == 0
-			|| (object->sprite->getPhysicsBody()->getCategoryBitmask() & sprite->getPhysicsBody()->getCollisionBitmask()) == 0)
-		{
-			cocos2d::log("%d / %d", getTag(), object->getTag());
-		}
-		else
-			cocos2d::log("NO COLLISION");
-
-	}
 }
 
 bool Actor::onContactBegin(PhysicsContact& contact)
@@ -70,12 +47,6 @@ bool Actor::onContactBegin(PhysicsContact& contact)
 	}
 	return false;
 }
-
-//void Actor::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
-//{
-//	cocos2d::log("HERE");
-//}
-
 
 Actor::~Actor()
 {
